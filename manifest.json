@@ -1,0 +1,35 @@
+{
+  "name": "NukeAI",
+  "description": "Nuking LLMS from your PC, read documentation you loser",
+  "version": "1.0",
+  "manifest_version": 3,
+  "permissions": [
+    "storage"
+  ],
+
+    "icons": {
+      "128": "icon3x.png",
+      "64" : "icon2x.png",
+      "32" :"icon.png"
+      
+      },
+       "action": {
+      "default_popup": "index.html"
+       },
+  "content_scripts": [
+    {
+      "js": ["scripts/aioverview.js"],
+      "matches": [  
+        "https://www.google.com/*"
+      ]
+    },
+    {
+      "js":["scripts/llmredirect.js"],
+       "matches": [  
+        "https://gemini.google.com/*",
+        "https://claude.ai/*",
+        "https://chatgpt.com/*"
+      ]
+    }
+  ]
+}
