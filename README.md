@@ -7,13 +7,13 @@ Search the web, read the sources, and make up your own mind.
 ## Preview
 
 <!-- Uncomment each line after you upload the image to the assets folder -->
- ###Before
+ **Before**
  ![Google results with the AI Overview](assets/before.png)
 
-###After
+**After**
  ![Google results after Nuke AI](assets/after.png)
 
- ###UI 
+**UI Overview**
  ![Extension settings](assets/popup.png) 
 
 ## Features
