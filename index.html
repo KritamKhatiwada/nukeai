@@ -2,18 +2,95 @@
 <html>
   <head>
     <meta charset="utf-8">
+    <style>
+      :root {
+        --bg: #ffffff;
+        --text: #111111;
+        --muted: #8a8a8a;
+        --track: #d4d4d4;
+        --on: #111111;
+        --knob: #ffffff;
+      }
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --bg: #111111;
+          --text: #f2f2f2;
+          --muted: #777777;
+          --track: #3a3a3a;
+          --on: #f2f2f2;
+          --knob: #111111;
+        }
+      }
+
+      * { box-sizing: border-box; }
+
+      body {
+        width: 220px;
+        margin: 0;
+        padding: 16px;
+        background: var(--bg);
+        color: var(--text);
+        font: 13px/1.4 system-ui, -apple-system, "Segoe UI", sans-serif;
+      }
+
+      h1 {
+        margin: 0 0 14px;
+        font-size: 11px;
+        font-weight: 600;
+        letter-spacing: 0.18em;
+        color: var(--muted);
+      }
+
+      label {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 8px 0;
+        cursor: pointer;
+      }
+
+      input {
+        appearance: none;
+        -webkit-appearance: none;
+        position: relative;
+        flex-shrink: 0;
+        width: 32px;
+        height: 18px;
+        margin: 0;
+        border-radius: 999px;
+        background: var(--track);
+        cursor: pointer;
+        transition: background 0.15s ease;
+      }
+
+      input::after {
+        content: "";
+        position: absolute;
+        top: 2px;
+        left: 2px;
+        width: 14px;
+        height: 14px;
+        border-radius: 50%;
+        background: var(--knob);
+        transition: transform 0.15s ease;
+      }
+
+      input:checked { background: var(--on); }
+      input:checked::after { transform: translateX(14px); }
+      input:focus-visible { outline: 2px solid var(--muted); outline-offset: 2px; }
+    </style>
   </head>
-  <body style="width:200px; padding:10px;">
+  <body>
     <h1>NUKE AI</h1>
-    
+
     <label>
+      <span>Gemini AI Overview</span>
       <input type="checkbox" id="checkAiOverview">
-      NUKE Gemini AI Overview
     </label>
-    <br><br>
+
     <label>
+      <span>Da Big 3 LLMs</span>
       <input type="checkbox" id="checkLlmRedirect">
-      NUKE Da BIG 3 LLMS
     </label>
 
     <script src="popup.js"></script>
